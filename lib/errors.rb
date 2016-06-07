@@ -9,6 +9,9 @@ module UdaciListErrors
   class InvalidPriorityValue < StandardError
   end
 
+  class UnsupportedItemType < StandardError
+  end
+
   # Errors for any new features go here
 end
 

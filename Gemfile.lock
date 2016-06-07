@@ -1,7 +1,10 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     chronic (0.10.2)
     colorize (0.7.7)
+    highline (1.7.8)
+    table_print (1.5.6)
 
 PLATFORMS
   ruby
@@ -9,6 +12,8 @@ PLATFORMS
 DEPENDENCIES
   chronic (= 0.10.2)
   colorize (= 0.7.7)
+  highline (~> 1.7, >= 1.7.8)
+  table_print (~> 1.5, >= 1.5.6)
 
 BUNDLED WITH
    1.12.5

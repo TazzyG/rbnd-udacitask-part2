@@ -1,37 +1,31 @@
 module Listable
 
-	def description
-		format_description(description)
-	end
+	# def description
+	# 	format_description(description)
+	# end
   def format_description(description)
     "#{description}".ljust(30)
   end
 
-  def format_date(options = {})
-	#This method should take in either 1 or 2 dates since TodoItem requires formatting 1 date, while EventItem could have up to 2 dates
-		# event.rb method
-		case options.length
-		when 1
-			# todo.rb
-    options[:due ] ? options[:due].strftime("%D") : "No due date"
-  	when 2 
-    dates = options[:start_date].strftime("%D") if options[:start_date]
-    dates << " -- " + options[:end_date].strftime("%D") if otions[:end_date]
-    dates = "N/A" unless dates
-    dates   
-    else 
-    	''
+  def format_priority(priority)
+    if (priority && !(priority == "high" || priority == "medium" || priority == "low") )
+        raise UdaciListErrors::InvalidPriorityValue, priority + " is not a valid priority"
     end
-	end
+    value = " ⇧".colorize(:red) if @priority == "high"
+    value = " ⇨".colorize(:yellow) if @priority == "medium"
+    value = " ⇩".colorize(:green) if @priority == "low"
+    value = "" if !@priority  
+  end
 
-	def title
-		puts "-".colorize(:light_blue) * title.length
-    puts @title
-    puts "-".colorize(:light_blue) * title.length
-	end
-
-	def format_priority
-	end
+  def format_date(start_date, end_date = false)
+    start_date = nil
+    end_date = nil
+    dates = Chronic.parse(start_date).strftime("%D") if start_date
+    dates << " -- " + Chronic.parse(end_date).strftime("%D") if end_date
+    dates = "No due date" if !dates
+    return dates
+  end
+  # do we need change_priority here? or do we want to leave it in to.do?
 end
 
 
