@@ -33,17 +33,13 @@ class UdaciList
   end
 
   # added feature
-  # def clear_list
-  #  @title = "Empty List"
-  #  puts "-" * new_title.length
-  #  puts @title
-  #  puts "-" * new_title.length
-  #  counter = 0
-  #    while counter < items.length
-  #     items.delete_at(0)
-  #   end
-  # end
-
+  def clear_list
+   @title = "Empty List"
+   counter = 0
+     while counter < items.length
+      items.delete_at(0)
+    end
+  end
 
   def filter(type)
     item_class = { "todo" => TodoItem, "event" => EventItem, "link" => LinkItem }
