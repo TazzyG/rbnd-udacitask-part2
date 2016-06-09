@@ -1,8 +1,10 @@
+require 'date'
+
 require 'chronic'
 require 'colorize'
-require 'date'
+
 # Find a third gem of your choice and add it to your project
-require 'table_print'
+require 'terminal-table'
 require 'highline/import'
 
 
@@ -51,6 +53,11 @@ tp new_list.all
 tp new_list.filter("event")
 
 
+## My Tests ##
+
+
+
+
 ######INFO ONLY DELETE AFTER PROJECT COMPLETE #######
 
 # Each item should display its item_type along with the item description.
@@ -60,3 +67,6 @@ tp new_list.filter("event")
 # Using your third gem in an interesting way
 # Allow deletion of multiple items
 # Change the priority levels of items
+
+
+

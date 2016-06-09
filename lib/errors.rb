@@ -1,5 +1,6 @@
 module UdaciListErrors
   # Error classes go here
+  # * **Errors**: `InvalidItemType`, `IndexExceedsListSize`, and `InvalidPriorityValue` are used appropriately.
   class InvalidItemType < StandardError
   end
 
@@ -7,9 +8,6 @@ module UdaciListErrors
   end
 
   class InvalidPriorityValue < StandardError
-  end
-
-  class UnsupportedItemType < StandardError
   end
 
   # Errors for any new features go here
