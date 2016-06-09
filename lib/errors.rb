@@ -11,6 +11,8 @@ module UdaciListErrors
   end
 
   # Errors for any new features go here
+  class EventPeriodError < StandardError
+  end
 end
 
 # Lesson reminders to raise an error using modules

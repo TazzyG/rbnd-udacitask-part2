@@ -9,6 +9,9 @@ class UdaciList
   end
   
   def add(type, description, options={})
+    if (options.has_key? :priority) &&(!["low", "high", "medium"].include? options[:priority])
+      raise UdaciListErrors::InvalidPriorityValue, "Please choose from low, medium or high, instead of #{options[:priority]}, OK?"
+    end
     type = type.downcase
     case type
     when "todo"
@@ -18,13 +21,14 @@ class UdaciList
     when "link"
       @items.push LinkItem.new(description, options)
     else
-      raise UdaciListErrors::InvalidItemType "At this time #{type} is not supported"
+      raise UdaciListErrors::InvalidItemType, "At this time, add #{type} is not supported"
     end
+    
   end
 
   def delete(index)
-    # index -= 1
-    # raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" unless @items.length > index 
+    index -= 1
+    raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" unless @items.length > index 
     @items.delete_at(index - 1)
   end
 
@@ -41,19 +45,13 @@ class UdaciList
   # end
 
 
-  # def filter(type)
-  #   @title = "Filtered by #{type}"
-  #   puts "-" * title.length
-  #   puts@title
-  #   puts "-" * title.length
-  #   items.each_with_index do |item, i|
-  #     if item.class.name.downcase.include? type
-  #       puts puts "#{i + 1}) #{item.details}"
-  #     else
-  #     puts "Can not filter by #{type}. Type does not exist.".colorize(:yellow)
-  #     end
-  #   end
-  # end
+  def filter(type)
+    item_class = { "todo" => TodoItem, "event" => EventItem, "link" => LinkItem }
+    rows = @items.select { |item| item.class == item_class[type] }.map { |item| [item.details] }
+    filtered_table = Terminal::Table.new :title => type, :rows => rows
+    puts filtered_table
+    puts "\n"
+  end
   def all  
     rows = []
     headings = ["item", "description"]
@@ -62,7 +60,7 @@ class UdaciList
     end
     table = Terminal::Table.new :title => @title, :headings => headings, :rows => rows
     puts table
-    puts "\n\n"
+    puts "\n"
   end
 end
 

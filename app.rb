@@ -24,7 +24,7 @@ list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
 list.add("link", "https://github.com", site_name: "GitHub Homepage")
 list.all
 list.delete(3)
-tp list.all
+
 
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
@@ -46,14 +46,17 @@ new_list.add("todo", "Hack some portals", priority: "super high") # throws an In
 
 # DISPLAY UNTITLED LIST
 # ---------------------
-tp new_list.all
+new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-tp new_list.filter("event")
+new_list.filter("event")
 
 
 ## My Tests ##
+
+#  class EventPeriodError < StandardError
+event_test = new_list.add("event", "Study Rails", start_date: "2016-6-1", end_date: "2015-9-1")
 
 
 
