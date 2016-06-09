@@ -1,13 +1,19 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+terminal-table: Made a nice table with proper headings, I also added the type of list as a column
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1... Change Priority of tasks
+  b) Feature 2... Clear a task list
 
 # REFLECTIONS
 # -------------------------------------------------------
-1. How long did you spend working on this project?
-2. What was the most rewarding challenge you conquered?
-3. What two additional features did you build? Why?
-4. Where do you still have room to grow?
+1. How long did you spend working on this project? Approximately 20 - 30 hours give or take. I broke the basic list several times, tried different approaches and tested lots. I am still not fast at figuring things out so each feature is lots of break and learn. It will come with time, I imagine.
+
+2. What was the most rewarding challenge you conquered? Adding a column with types of list. I had to play different classes. Same with change_priority - had to remind myself of calling classes within other classes. 
+I think I loved the libraries. I had know about gems but not libraries. Also I learned that going crazy with gems can break your code. So, I kept it simple, one gem at a time. 
+I learned that the order of libraries is important. Broke my dates by having Date library not on top.
+3. What two additional features did you build? Why? .. hmm. maybe push out an event by days/or weeks and have it move the start and end date.
+4. Where do you still have room to grow? I still need to get more confortable with refactoring. These tests helped lots but I did find myself breaking things and going back to where I started. I do love modules though. I can see using this alot in my projects.
+
+I find if I don't keep going for 2 hours a day (say get interupted with other projects). I have to relearn. It helps to take good notes. 

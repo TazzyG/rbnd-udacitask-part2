@@ -5,8 +5,6 @@ require 'colorize'
 
 # Find a third gem of your choice and add it to your project
 require 'terminal-table'
-require 'highline/import'
-
 
 require_relative "lib/listable"
 require_relative "lib/errors"
@@ -67,15 +65,14 @@ new_list # should show @title="Empty List", @items=[]
 
 
 
-######INFO ONLY DELETE AFTER PROJECT COMPLETE #######
+## Requirments 
 
-# Each item should display its item_type along with the item description.
-# The last line of app.rb — list.filter(item_type) that takes an item_type as input and displays only list items of that type if they exist, or alerts the user if there aren't any items of that type.
+# Each item should display its item_type along with the item description. - Done
+# The last line of app.rb — list.filter(item_type) that takes an item_type as input and displays only list items of that type if they exist, or alerts the user if there aren't any items of that type. Done
 # In addition to the two features above, add 2 more features of your choice: If you get stuck deciding on a new feature, here are some suggestions:
-# Creating a new item type
-# Using your third gem in an interesting way
-# Allow deletion of multiple items
-# Change the priority levels of items
+
+# Change the priority levels of items 
+# Clear a list
 
 
 
