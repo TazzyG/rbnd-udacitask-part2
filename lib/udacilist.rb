@@ -1,5 +1,5 @@
 class UdaciList
-  attr_reader :title, :items
+  attr_reader :title, :items, :type
 
   # New instance of Udacilist
   def initialize(options={})
@@ -54,10 +54,12 @@ class UdaciList
     puts "\n"
   end
   def all  
+    
     rows = []
-    headings = ["item", "description"]
+    headings = ["item", "type","description"]
+    
     @items.each_with_index do |item, position|
-      rows.push([position+1, item.details])
+      rows.push([position+1, item.type , item.details])
     end
     table = Terminal::Table.new :title => @title, :headings => headings, :rows => rows
     puts table

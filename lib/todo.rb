@@ -1,13 +1,14 @@
 class TodoItem
   include Listable
 
-  attr_reader :description, :due
+  attr_reader :due
   attr_accessor :priority
   
   def initialize(description, options={})
     @description = description
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority] || "low"
+    @type = "todo"
   end
     
   def format_date(due)

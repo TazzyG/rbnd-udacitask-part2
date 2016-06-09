@@ -1,6 +1,6 @@
 class EventItem
   include Listable
-  attr_reader :description, :start_date, :end_date
+  attr_reader :start_date, :end_date
 
   def initialize(description, options={})
     @description = description
@@ -9,6 +9,7 @@ class EventItem
     if @start_date && @end_date && (@start_date > @end_date)
       raise UdaciListErrors::EventPeriodError, "#{end_date} is should be after #{start_date}"
     end
+    @type = "event"
   end
   
   def format_duration_date(start_date, end_date)
