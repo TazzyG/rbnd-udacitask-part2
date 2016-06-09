@@ -5,6 +5,7 @@ terminal-table: Made a nice table with proper headings, I also added the type of
 2. Describe the 2 features you added to the project.
   a) Feature 1... Change Priority of tasks
   b) Feature 2... Clear a task list
+  c) Error ... if Event start exceeded finish
 
 # REFLECTIONS
 # -------------------------------------------------------
@@ -15,5 +16,10 @@ I think I loved the libraries. I had know about gems but not libraries. Also I l
 I learned that the order of libraries is important. Broke my dates by having Date library not on top.
 3. What two additional features did you build? Why? .. hmm. maybe push out an event by days/or weeks and have it move the start and end date.
 4. Where do you still have room to grow? I still need to get more confortable with refactoring. These tests helped lots but I did find myself breaking things and going back to where I started. I do love modules though. I can see using this alot in my projects.
+I found myself breaking things with some of the gems. For example, applying colorize for something was not always fun.
 
 I find if I don't keep going for 2 hours a day (say get interupted with other projects). I have to relearn. It helps to take good notes. 
+
+
+GIT is my pal. 
+So is my console :)

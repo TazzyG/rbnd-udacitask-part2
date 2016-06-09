@@ -7,7 +7,7 @@ class EventItem
     @start_date = Chronic.parse(options[:start_date]) if options[:start_date]
     @end_date = Chronic.parse(options[:end_date]) if options[:end_date]
     if @start_date && @end_date && (@start_date > @end_date)
-      raise UdaciListErrors::EventPeriodError, "#{end_date} is should be after #{start_date}"
+      raise UdaciListErrors::EventPeriodError, "#{@end_date} is should be after #{@start_date}"
     end
     @type = "event"
   end

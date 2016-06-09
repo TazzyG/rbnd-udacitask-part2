@@ -4,7 +4,7 @@ class UdaciList
   # New instance of Udacilist
   def initialize(options={})
     @title = ""
-    @title = options[:title] 
+    @title = options[:title]
     @items = []
   end
   
@@ -56,7 +56,7 @@ class UdaciList
   def all  
     
     rows = []
-    headings = ["item", "type","description"]
+    headings = ["item".colorize(:blue), "type".colorize(:yellow),"description".colorize(:blue)]
     
     @items.each_with_index do |item, position|
       rows.push([position+1, item.type , item.details])

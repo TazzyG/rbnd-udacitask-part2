@@ -20,9 +20,9 @@ list.add("todo", "Buy groceries", priority: "high")
 list.add("event", "Birthday Party", start_date: "2016-05-08")
 list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
 list.add("link", "https://github.com", site_name: "GitHub Homepage")
-list.all
+list.all # Should be 6 items
 list.delete(3)
-
+list.all # Should be 5 items
 
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
@@ -36,6 +36,8 @@ new_list.add("event", "Life happens")
 new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
 new_list.add("link", "http://ruby-doc.org")
 
+new_list.all # Should be 8 items
+
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
 new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error
@@ -44,7 +46,7 @@ new_list.add("todo", "Hack some portals", priority: "super high") # throws an In
 
 # DISPLAY UNTITLED LIST
 # ---------------------
-new_list.all
+new_list.all  # Should still be 8 items
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
@@ -52,9 +54,9 @@ new_list.filter("event")
 
 
 ## My Tests ##
-new_list.all
+new_list.all  # Item 1 should be blue straight arrow
 new_list.change_priority(1,"high")
-new_list.all
+new_list.all # Item 1 should now be red up arrow
 
 # class EventPeriodError < StandardError
 event_test = new_list.add("event", "Study Rails", start_date: "2016-6-1", end_date: "2015-9-1") # Should throw error
