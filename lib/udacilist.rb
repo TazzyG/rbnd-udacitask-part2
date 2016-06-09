@@ -26,6 +26,11 @@ class UdaciList
     
   end
 
+  def change_priority(index,priority)
+    todo = @items[index-1]
+    todo.change_priority(priority)
+  end
+
   def delete(index)
     index -= 1
     raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" unless @items.length > index 
