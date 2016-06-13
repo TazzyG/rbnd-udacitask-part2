@@ -13,6 +13,9 @@ module UdaciListErrors
   # Errors for any new features go here
   class EventPeriodError < StandardError
   end
+
+  class InvalidSchedule < StandardError
+  end
 end
 
 # Lesson reminders to raise an error using modules

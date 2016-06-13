@@ -1,6 +1,6 @@
 class EventItem
   include Listable
-  attr_reader :start_date, :end_date
+  attr_accessor :start_date, :end_date
 
   def initialize(description, options={})
     @description = description
@@ -12,14 +12,19 @@ class EventItem
     @type = "event"
   end
   
-  # def format_duration_date(start_date, end_date)
-  #   dates = @start_date.strftime("%D") if @start_date
-  #   dates << " -- " + @end_date.strftime("%D") if @end_date
-  #   dates = "N/A" unless dates
-  #   return dates
-  # end
+  def move_dates(number_of_days)
+    
+    @number_days = number_of_days
+    
+    @start_date = @start_date.to_date + number_of_days if @start_date 
+    @end_date = @start_date.to_date + number_of_days if @end_date
+   
+    if @start_date.to_date < DateTime.now
+      raise UdaciListErrors::InvalidSchedule, "Start date must be in the future"
+    end
+  end
 
   def details
-    format_description(@description) + "event dates: " + format_duration_date(@start_date, @end_date)
+    format_description(@description) + "event dates: " + format_date(@start_date, @end_date)
   end
 end

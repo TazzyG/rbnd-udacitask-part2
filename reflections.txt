@@ -4,14 +4,18 @@
 terminal-table: Made a nice table with proper headings, I also added the type of list as a column
 2. Describe the 2 features you added to the project.
   a) Feature 1... Change Priority of tasks
-  b) Feature 2... Clear a task list
-  c) Error ... if Event start exceeded finish
+  b) Feature 2... Clear a task list, added feature to move out time for events with start and end dates. 
+  c) Error ... if Event start exceeded finish, plus error if event moved to date before today
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project? Approximately 20 - 30 hours give or take. I broke the basic list several times, tried different approaches and tested lots. I am still not fast at figuring things out so each feature is lots of break and learn. It will come with time, I imagine.
 
+Update: I spent 2 more hours ammending based on my Udacity Project review feedback :)
+
 2. What was the most rewarding challenge you conquered? Adding a column with types of list. I had to play different classes. Same with change_priority - had to remind myself of calling classes within other classes. 
+Update: Learning how to work with dates and time, I googled and found some help in Stack Overflow but takes time to learn. 
+
 I think I loved the libraries. I had know about gems but not libraries. Also I learned that going crazy with gems can break your code. So, I kept it simple, one gem at a time. 
 I learned that the order of libraries is important. Broke my dates by having Date library not on top.
 3. What two additional features did you build? Why? .. hmm. maybe push out an event by days/or weeks and have it move the start and end date.

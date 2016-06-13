@@ -26,22 +26,27 @@ class UdaciList
     
   end
 
-  def change_priority(index,priority)
+  def change_priority(index, priority)
     todo = @items[index-1]
     todo.change_priority(priority)
   end
 
+  def push_out_date(index, number_of_days)
+    if 
+    event = @items[index-1] 
+    event.move_dates(number_of_days)
+    end
+  end
+
   def delete(index)
-    index -= 1
-    raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" if @items.length > index 
-    @items.delete_at(index)
+    raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" if @items.length < index 
+    @items.delete_at(index -1)
   end
 
   # added feature
   def clear_list
    @title = "Empty List"
    @items = []
-    end
   end
 
   def filter(type)
@@ -51,11 +56,9 @@ class UdaciList
     puts filtered_table
     puts "\n"
   end
-  def all  
-    
+  def all   
     rows = []
-    headings = ["item".colorize(:blue), "type".colorize(:yellow),"description".colorize(:blue)]
-    
+    headings = ["item".colorize(:blue), "type".colorize(:yellow),"description".colorize(:blue)]   
     @items.each_with_index do |item, position|
       rows.push([position+1, item.type , item.details])
     end

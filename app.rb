@@ -61,7 +61,7 @@ new_list.all # Item 1 should now be red up arrow
 # class EventPeriodError < StandardError
 event_test = new_list.add("event", "Study Rails", start_date: "2016-6-1", end_date: "2015-9-1") # Should throw error
  
-## Requirments 
+## Requirements 
 
 # Each item should display its item_type along with the item description. - Done
 # The last line of app.rb — list.filter(item_type) that takes an item_type as input and displays only list items of that type if they exist, or alerts the user if there aren't any items of that type. Done
@@ -69,6 +69,10 @@ event_test = new_list.add("event", "Study Rails", start_date: "2016-6-1", end_da
 
 # Change the priority levels of items 
 # Clear a list
+# Move out an event by days
 
+new_list.push_out_date(5, 10) 
+new_list.all # birthday party should start 12/30/16 and end 01/09/17 
 
+new_list.push_out_date(5, -300) #should see InvalidSchedule
 

@@ -6,38 +6,35 @@ module Listable
     "#{description}".ljust(25)
   end
 
-  # format date from todo.rb
-  def format_date(start_date, end_date)
-    @end_date ? @end_date.strftime("%D") if @end_date
-    @dates = @start_date.strftime("%D") if @start_date
-    @dates << " -- " + @end_date.strftime("%D") if @end_date
-    @dates = "N/A" unless dates
-    return dates
+  # started with method from todo.rb 
+  # I tried Chronic.parse first but got TypeError: no implicit conversion of Time into String so use strttime
+  def format_date(start_date, end_date = nil)
+    if end_date
+    dates = start_date.strftime("%D") if start_date
+    dates << " -- " + end_date.strftime('%D') if end_date
+    dates = "N/A" if !dates
+    return dates 
+    else 
+      return start_date ? start_date.strftime("%D") : "N/A"
+    end
   end
 
   def format_name
     @site_name ? @site_name : ""
   end
 
-  # # from event.rb before refactoring
-  # def format_duration_date(start_date, end_date)
-  #   dates = @start_date.strftime("%D") if @start_date
-  #   dates << " -- " + @end_date.strftime("%D") if @end_date
-  #   dates = "N/A" unless dates
-  #   return dates
-  # end
-
-  # format priority from todo.rb
+  # format priority started with method from todo.rb
   def format_priority(priority)
-    case value
+    case priority
     when "high"
     value = " ⇧".colorize(:red)
     when "medium"
     value = " ⇨".colorize(:blue) 
     when "low"
-    value = " ⇩".colorize(:white) if @priority == "low"
+    value = " ⇩".colorize(:white) 
     else
-    value = "" 
+    value = ""
+    end
   end
 
   # change priority from todo.rb
@@ -47,9 +44,6 @@ module Listable
       raise UdaciListErrors::InvalidPriorityValue, "Please choose from low, medium or high, instead of #{options[:priority]}, OK?"
     end
   end
-
-
-
 
   def type
     @type 
