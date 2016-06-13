@@ -60,13 +60,7 @@ new_list.all # Item 1 should now be red up arrow
 
 # class EventPeriodError < StandardError
 event_test = new_list.add("event", "Study Rails", start_date: "2016-6-1", end_date: "2015-9-1") # Should throw error
-# clear list 
-new_list.clear_list # should show nil
-new_list # should show @title="Empty List", @items=[]
-
-
-
-
+ 
 ## Requirments 
 
 # Each item should display its item_type along with the item description. - Done

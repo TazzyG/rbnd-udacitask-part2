@@ -12,12 +12,12 @@ class EventItem
     @type = "event"
   end
   
-  def format_duration_date(start_date, end_date)
-    dates = @start_date.strftime("%D") if @start_date
-    dates << " -- " + @end_date.strftime("%D") if @end_date
-    dates = "N/A" unless dates
-    return dates
-  end
+  # def format_duration_date(start_date, end_date)
+  #   dates = @start_date.strftime("%D") if @start_date
+  #   dates << " -- " + @end_date.strftime("%D") if @end_date
+  #   dates = "N/A" unless dates
+  #   return dates
+  # end
 
   def details
     format_description(@description) + "event dates: " + format_duration_date(@start_date, @end_date)

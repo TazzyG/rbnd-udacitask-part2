@@ -33,16 +33,14 @@ class UdaciList
 
   def delete(index)
     index -= 1
-    raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" unless @items.length > index 
-    @items.delete_at(index - 1)
+    raise UdaciListErrors::IndexExceedsListSize, "Item #{index} does not exist" if @items.length > index 
+    @items.delete_at(index)
   end
 
   # added feature
   def clear_list
    @title = "Empty List"
-   counter = 0
-     while counter < items.length
-      items.delete_at(0)
+   @items = []
     end
   end
 
